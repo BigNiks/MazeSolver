@@ -33,7 +33,7 @@ public class MazeSolver {
         // TODO: Get the solution from the maze
         // Should be from start to end cells
         Stack<MazeCell> s = new Stack<>();
-        MazeCell cell = maze.getEndCell();
+        MazeCell cell = maze.getStartCell();
         while (maze.isValidCell(cell.getRow(), cell.getCol())) {
             s.push(cell);
             cell = cell.getParent();
