@@ -32,11 +32,15 @@ public class MazeSolver {
     public ArrayList<MazeCell> getSolution() {
         // TODO: Get the solution from the maze
         // Should be from start to end cells
-        ArrayList<MazeCell> solution = new ArrayList<>();
+        Stack<MazeCell> s = new Stack<>();
         MazeCell cell = maze.getEndCell();
         while (maze.isValidCell(cell.getRow(), cell.getCol())) {
-            solution.add(0, cell);
+            s.push(cell);
             cell = cell.getParent();
+        }
+        ArrayList<MazeCell> solution= new ArrayList<>();
+        for (MazeCell m : s) {
+            solution.add(m);
         }
         return solution;
     }
